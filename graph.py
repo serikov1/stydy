@@ -67,14 +67,15 @@ def adc():
             i = int((n+m) / 2)
 try:
     while adc() <255:
-        GPiO.output(17, 0) 
+        GPiO.output(17, 0) #разрядили кондер
         print("000")
         time.sleep(0.1)
 
-    start = time.time() 
-    listT = [] 
-    listV = [] 
-    measure = [] 
+    start = time.time() #время начала 
+    listT = [] #список времён
+    listV = [] #список напряжений 
+    measure = [] #список измеренных кодов напряжений 
+
 
     GPiO.output (17,1)
     while adc() < 252:
