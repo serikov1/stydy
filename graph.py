@@ -1,28 +1,33 @@
-import RPi.GPIO as GPiO
-# import matplotlib.pyplot as plt
-import time
-# import numpy as np
 
-GPiO.setmode(GPiO.BCM)
-GPiO.setup(4, GPiO.IN)
-GPiO.setup(17, GPiO.OUT)
-GPiO.setup(26, GPiO.OUT)
-GPiO.setup(19, GPiO.OUT)
-GPiO.setup(13, GPiO.OUT)
-GPiO.setup(6, GPiO.OUT)
-GPiO.setup(5, GPiO.OUT)
-GPiO.setup(11, GPiO.OUT)
-GPiO.setup(9, GPiO.OUT)
-GPiO.setup(10, GPiO.OUT)
-GPiO.setup(21, GPiO.OUT)
-GPiO.setup(20, GPiO.OUT)
-GPiO.setup(16, GPiO.OUT)
-GPiO.setup(12, GPiO.OUT)
-GPiO.setup(7, GPiO.OUT)
-GPiO.setup(8, GPiO.OUT)
-GPiO.setup(25, GPiO.OUT)
-GPiO.setup(24, GPiO.OUT)
+# print('Hello, world!')
+# x = 5
+# name = 'Nikita'
+# print('x is', x, 'name is', name, sep='\n', end='!')
+# print(f'x is {x}, name is {name}')
+# arr = [x, name, 42, '42', 'Something else']
+# arr.append(6)
+# print(arr)
 
+
+x = [1, 2, 3, 4, 5]
+y = []
+for num in x:
+    y.append(num * num)
+coeffs = numpy.polyfit(x, y, 1)
+k = coeffs[0]
+b = coeffs[1]
+line_points = [k * number + b for number in x]
+pyplot.scatter(x, y, color='r')
+pyplot.plot(x, line_points, color='b')
+pyplot.xlabel('x, см')
+pyplot.ylabel('y, с')
+pyplot.xlim(0, 6)
+pyplot.ylim(0, 30)
+pyplot.grid()
+pyplot.title('График зависимости иксов от их квадратов\nс линейной аппроксимацией')
+pyplot.savefig('first')
+
+<<<<<<< HEAD
 dac = [26, 19, 13, 6, 5, 11, 9, 10]
 leds =[21, 20, 16, 12, 7, 8, 25, 24]
 
@@ -127,3 +132,5 @@ finally:
     for i in range (7, -1, -1):
         GPiO.output(dac[i], 0) 
        
+=======
+>>>>>>> 1e4b3451be867166b7360c0802e21a1e2c05ec62
